@@ -34,7 +34,7 @@ import pexpect
 # Private Imports
 # -----------------------------------------------------------------------------
 
-from ipfnetcfgbu.logging import get_logger
+from ipfnetcfgbu.ipf_logging import get_logger
 from ipfnetcfgbu.config_model import GitSpec
 
 git_bin = "git"

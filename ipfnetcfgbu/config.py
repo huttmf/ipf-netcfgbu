@@ -14,7 +14,7 @@ import toml
 # Private Imports
 # -----------------------------------------------------------------------------
 
-from ipfnetcfgbu import logging
+from ipfnetcfgbu import ipf_logging
 from .config_model import ConfigModel
 from pydantic import ValidationError
 
@@ -42,7 +42,7 @@ def load(*, filepath=None, fileio=None) -> ConfigModel:
     if fileio:
         app_cfg = toml.load(fileio)
 
-    logging.start(app_cfg)
+    ipf_logging.start(app_cfg)
 
     app_defaults = app_cfg.get("defaults")
     if not app_defaults:

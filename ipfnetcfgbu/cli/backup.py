@@ -10,7 +10,7 @@ from aioipfabric.filters import parse_filter
 from ipfnetcfgbu.domain_remover import make_domain_remover
 from ipfnetcfgbu.config_model import ConfigModel
 from ipfnetcfgbu.ipf import IPFabricClient
-from ipfnetcfgbu import logging
+from ipfnetcfgbu import ipf_logging
 from .root import cli, opt_config_file, WithConfigCommand
 
 
@@ -19,7 +19,7 @@ async def exec_backup(
 ):
     ipf_cfg = config.ipfabric
 
-    log = logging.get_logger()
+    log = ipf_logging.get_logger()
 
     filters = filters or ipf_cfg.filters
 
@@ -108,7 +108,7 @@ async def exec_backup(
     )
 
     log.info(f"Total devices: {len(res)}")
-    logging.stop()
+    ipf_logging.stop()
     await ipf.logout()
 
 

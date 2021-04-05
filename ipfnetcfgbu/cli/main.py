@@ -6,3 +6,7 @@ from .vcs import cli_vcs  # noqa
 
 def run():
     cli(obj={})
+
+
+if __name__ == "__main__":
+    run()
